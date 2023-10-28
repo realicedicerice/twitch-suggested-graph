@@ -1,0 +1,24 @@
+{
+  "name": "twitch-suggested-graph",
+  "version": "1.0.0",
+  "scripts": {
+    "esbuild": "esbuild ./src/index.js --bundle --platform=browser --jsx-factory=h --jsx-fragment=Fragment --outfile=./public/index.js --minify",
+    "esbuild:watch": "esbuild ./src/index.js --bundle --platform=browser --jsx-factory=h --jsx-fragment=Fragment --outfile=./public/index.js --watch --sourcemap",
+    "tar": "tar -zcvf ./${PWD##*/}_$(date +'%Y-%m-%dT%H:%M:%S%z').tar.gz --exclude=node_modules --exclude='*.tar.gz' .",
+    "serve": "static ./public/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@preact/signals": "^1.2.1",
+    "eventemitter2": "^6.4.9",
+    "graphql-request": "^6.1.0",
+    "preact": "^10.18.1",
+    "vis-data": "^7.1.7",
+    "vis-network": "^9.1.8"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.5",
+    "node-static": "^0.7.11"
+  },
+  "type": "module"
+}
