@@ -118,7 +118,7 @@ function createCrawler() {
             to: suggestedUser.id
         }))
         
-        processed.push(Number(user.id))    
+        processed.push(Number(user.id))
         
         for (const suggestedUser of suggested) {
             const id = Number(suggestedUser.id)
@@ -126,6 +126,8 @@ function createCrawler() {
             if (processed.includes(id)) {
                 continue
             }
+            
+            processed.push(id)
 
             queue.push(suggestedUser.login)
         }
